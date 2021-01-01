@@ -70,6 +70,20 @@ public class CourseServiceImplimentation implements CourseService {
 		}
 		return updatedCourse;
 	}
+
+
+	@Override
+	public void deleteCourse(long courseId) {
+		Course course = null;
+		for(Course c: list)
+		{
+			if(c.getId() == courseId)
+			{
+				list.remove(courseId);
+				break;
+			}
+		}
+	}
 	
 	
 
