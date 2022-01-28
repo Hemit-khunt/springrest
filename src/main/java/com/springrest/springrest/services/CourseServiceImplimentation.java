@@ -32,7 +32,6 @@ public class CourseServiceImplimentation implements CourseService {
 
 	@Override
 	public Course getCourse(long courseId) {
-		
 		Course course = null;
 		for(Course c: list)
 		{
@@ -44,6 +43,35 @@ public class CourseServiceImplimentation implements CourseService {
 		}
 		return course;
 	}
+
+
+	@Override
+	public Course addCourse(Course course) {
+		
+		list.add(course);
+		
+		return course;
+	}
+
+
+	@Override
+	public Course updateCourse(Course course) {
+		
+		Course updatedCourse = null;
+		
+		for(Course c: list)
+		{
+			if(c.getId()==course.getId())
+			{
+				c.setTitle(course.getTitle());
+				c.setDescription(course.getDescription());
+				updatedCourse = c;
+			}
+		}
+		return updatedCourse;
+	}
+	
+	
 
 }
  
