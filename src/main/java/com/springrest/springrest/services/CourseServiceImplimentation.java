@@ -26,9 +26,24 @@ public class CourseServiceImplimentation implements CourseService {
 
 	@Override
 	public List<Course> getCourses() {
-		
-		
 		return list;
 	}
 
+
+	@Override
+	public Course getCourse(long courseId) {
+		
+		Course course = null;
+		for(Course c: list)
+		{
+			if(c.getId() == courseId)
+			{
+				course = c;
+				break;
+			}
+		}
+		return course;
+	}
+
 }
+ 
